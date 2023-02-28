@@ -13,4 +13,5 @@
     enableZshIntegration = true;
     enableFishIntegration = true;
   };
+  programs.home-manager.enable = true;
 }
