@@ -5,6 +5,7 @@
     ../../editors/emacs/doom-emacs
     ../../shells/git
     ../../shells/zsh
+    ../../shells/fish
     ../../shells/terminal
     ../../lang/latex
     ../../lang/markdown

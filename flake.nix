@@ -58,7 +58,7 @@
 
   outputs = inputs @ { self, nixpkgs, nixpkgs-unstable, home-manager, flake-utils, darwin, nur, nixgl, emacs-overlay, hyprland, ... }: # Function that tells my flake which to use and what do what to do with the dependencies.
     let # Variables that can be used in the config files.
-      user = "chenkailong";
+      user = "panyan";
       location = "$HOME/.config";
       forAllSystems = nixpkgs.lib.genAttrs [
         "aarch64-linux"
@@ -103,7 +103,7 @@
             # personal-packages = personal-packages.packages.aarch64-darwin;
             pkgs-unstable = nixpkgs-unstable.legacyPackages.aarch64-darwin;
           }; # Pass flake inputs to our config
-          modules = [ ./modules/hosts/macbook-pro-m1 ];
+          modules = [ ./modules/hosts/panyandeMacBook-Pro ];
         };
       };
       darwinConfigurations = {

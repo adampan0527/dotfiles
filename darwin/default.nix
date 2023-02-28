@@ -48,7 +48,7 @@
   };
 
   environment = {
-    shells = with pkgs; [ zsh ]; # Default shell
+    shells = with pkgs; [ fish ]; # Default shell
     # variables = {
     #   # System variables
     #   EDITOR = "nvim";
@@ -60,6 +60,7 @@
         # Terminal
         home-manager
         zsh
+        fish
         wakatime
         nixpkgs-fmt
         coreutils
@@ -88,9 +89,9 @@
       qq = 451108668;
       dingtalk = 1435447041;
       tencent-meeting = 1484048379;
-      "microsoft-word" = 462054704;
-      "microsoft-powerpoint" = 462062816;
-      "microsoft-excel" = 462058435;
+      # "microsoft-word" = 462054704;
+      # "microsoft-powerpoint" = 462062816;
+      # "microsoft-excel" = 462058435;
       "goodnotes-5" = 1444383602;
     };
 
@@ -105,15 +106,18 @@
       "mas"
       "pngpaste" # for emacs download clipboard
       "macism"
+      "opencv"
+      "make"
+      "cmake"
 
     ];
-    casks = [
+    casks = [ #third party
+      "anaconda"
       "google-chrome"
       "sublime-text"
       "telegram"
       "baidunetdisk"
       "iterm2"
-      "marginnote"
       "vial"
       "dash"
       "visual-studio-code"
@@ -155,10 +159,10 @@
       };
       dock = {
         # Dock settings
-        autohide = true;
+        autohide = false;
         orientation = "bottom";
         showhidden = true;
-        tilesize = 40;
+        tilesize = 100;
       };
       finder = {
         # Finder settings
