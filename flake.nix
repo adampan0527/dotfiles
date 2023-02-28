@@ -86,28 +86,21 @@
         });
       # formatter.x86_64-linux = nixpkgs.legacyPackages.x86_64-linux.nixpkgs-fmt;
       # formatter.aarch64-darwin = nixpkgs.legacyPackages.aarch64-darwin.nixpkgs-fmt;
-      nixosConfigurations = (
-        # NixOS configurations
-        import ./hosts {
-          # Imports ./hosts/default.nix
-          inherit (nixpkgs) lib;
-          inherit inputs nixpkgs home-manager nur user location hyprland; # Also inherit home-manager so it does not need to be defined here.
-        }
-      );
+
       homeConfigurations = {
 
-        "panyan@panyandeMacBook-Pro" = home-manager.lib.homeManagerConfiguration {
+        "panyan@macbook" = home-manager.lib.homeManagerConfiguration {
           pkgs = legacyPackages.aarch64-darwin;
           extraSpecialArgs = {
             inherit inputs;
             # personal-packages = personal-packages.packages.aarch64-darwin;
             pkgs-unstable = nixpkgs-unstable.legacyPackages.aarch64-darwin;
           }; # Pass flake inputs to our config
-          modules = [ ./modules/hosts/panyandeMacBook-Pro ];
+          modules = [ ./modules/hosts/macbook ];
         };
       };
       darwinConfigurations = {
-        "panyandeMacBook-Pro" = darwin.lib.darwinSystem {
+        "macbook" = darwin.lib.darwinSystem {
           system = "aarch64-darwin";
           specialArgs = {
             inherit user inputs;
