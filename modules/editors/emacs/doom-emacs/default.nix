@@ -21,7 +21,7 @@
 {
 
   home.packages = with pkgs; [
-    python3 # treemacs
+    # python3 # treemacs
     ripgrep
     fd
     curl

@@ -15,15 +15,17 @@
     # Fonts
     fontDir.enable = true;
     fonts = with pkgs; [
+      jetbrains-mono
+      cascadia-code
       comic-mono
       fira-code
       ibm-plex
       roboto-mono
       twemoji-color-font
-      mononoki
+      # mononoki
       symbola
-      noto-fonts
-      noto-fonts-extra
+      # noto-fonts
+      # noto-fonts-extra
       noto-fonts-emoji
       noto-fonts-cjk-sans
       noto-fonts-cjk-serif
@@ -32,16 +34,10 @@
       liberation_ttf
       overpass
       freefont_ttf
-      source-code-pro
-      source-sans-pro
-      source-serif-pro
-      sarasa-gothic
       iosevka
       cm_unicode
       hanazono
       lmodern
-      # lmmath
-      # nerdfonts
 
     ];
 
@@ -106,13 +102,8 @@
       "mas"
       "pngpaste" # for emacs download clipboard
       "macism"
-      "opencv"
-      "make"
-      "cmake"
-
     ];
     casks = [ #third party
-      "anaconda"
       "google-chrome"
       "sublime-text"
       "telegram"
@@ -120,8 +111,8 @@
       "iterm2"
       "vial"
       "dash"
-      "visual-studio-code"
       "plexamp"
+      "squirrel"
     ];
 
 

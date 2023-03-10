@@ -1,15 +1,12 @@
-
-{ config, lib, pkgs, ... }:
-
 {
-
-
-  home.packages = with pkgs;
-  [
-    python310
-    python310Packages.pip
-    python310Packages.isort
-    
+  config,
+  lib,
+  pkgs,
+  ...
+}: {
+  home.packages = with pkgs; [
+    (python310.withPackages (ps: with ps; [isort matplotlib numpy pandas torch torchvision virtualenv]))
+    # python3Full
     nodejs
     nodePackages.pyright
   ];

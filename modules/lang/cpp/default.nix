@@ -7,7 +7,7 @@
 
   home.packages = with pkgs;
   [
-    # opencv
+    opencv
     cmake
   ];
 }

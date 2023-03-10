@@ -74,3 +74,65 @@
 ;;
 ;; You can also try 'gd' (or 'C-c c d') to jump to their definition and see how
 ;; they are implemented.
+
+;; Framing Size
+;; start the initial frame maximized
+;; (add-hook 'window-setup-hook #'toggle-frame-maximized)
+;; (add-hook 'window-setup-hook #'toggle-frame-fullscreen)
+
+(add-to-list 'default-frame-alist '(height . 40))
+
+
+(add-to-list 'default-frame-alist '(width . 100))
+
+;; Doom exposes five (optional) variables for controlling fonts in Doom:
+;;
+;; - `doom-font' -- the primary font to use
+;; - `doom-variable-pitch-font' -- a non-monospace font (where applicable)
+;; - `doom-big-font' -- used for `doom-big-font-mode'; use this for
+;;   presentations or streaming.
+;; - `doom-unicode-font' -- for unicode glyphs
+;; - `doom-serif-font' -- for the `fixed-pitch-serif' face
+;;
+;; See 'C-h v doom-font' for documentaion and more examples of what they
+;; accept. For example:
+
+
+;; If you or Emacs can't find your font, use 'M-x describe-font' to look them
+;; up, `M-x eval-region' to execute elisp code, and 'M-x doom/reload-font' to
+;; refresh your font settings. If Emacs still can't find your font, it likely
+;; wasn't installed correctly. Font issues are rarely Doom issues!
+;; DON'T use (`font-family-list'), it's unreliable on Linux
+;; org mode table
+
+(cond
+ (IS-MAC
+  (setq doom-font (font-spec :family "Jetbrains Mono"   :size 19)
+        doom-big-font (font-spec :family "Jetbrains Mono"  :size 36)
+        doom-variable-pitch-font (font-spec :family "Overpass"  :size 23)
+        ;;doom-unicode-font (font-spec :family "FZSongKeBenXiuKai-R-GBK" :weight 'light :slant 'italic :size 21)
+        doom-serif-font (font-spec :family "IBM Plex Serif"  :size 23))
+  (add-hook! 'after-init-hook
+             :append
+             (lambda ()
+               ;; Emoji: 😄, 🤦, 🏴󠁧󠁢󠁳󠁣󠁴
+               (set-fontset-font "fontset-default" 'symbol (font-spec :family "Apple Color Emoji" )  )
+               (set-fontset-font "fontset-default" 'symbol (font-spec :family "Symbola" )            )
+               (set-fontset-font "fontset-default" 'symbol (font-spec :family "Noto Color Emoji" )   )
+               (set-fontset-font "fontset-default" 'symbol (font-spec :family "Liberation Mono" )    )
+               (set-fontset-font "fontset-default" 'symbol (font-spec :family "Noto Sans Symbols2" ) )
+               (set-fontset-font "fontset-default" 'symbol (font-spec :family "Segoe UI Emoji" )     )
+               (set-fontset-font "fontset-default" 'symbol (font-spec :family "FreeSerif" )         )
+               (set-fontset-font "fontset-default" 'symbol (font-spec :family "Twitter Color emoji" ))
+               ;; East Asia: 你好, 早晨, こんにちは, 안녕하세요
+               (set-fontset-font "fontset-default" 'han      (font-spec :family "LXGW WenKai"))
+               (set-fontset-font "fontset-default" 'kana     (font-spec :family "LXGW WenKai"))
+               (set-fontset-font "fontset-default" 'hangul   (font-spec :family "LXGW WenKai"))
+               (set-fontset-font "fontset-default" 'cjk-misc (font-spec :family "Noto Serif CJK SC"))
+               ;; Cyrillic: Привет, Здравствуйте, Здраво, Здравейте
+               (set-fontset-font "fontset-default" 'cyrillic (font-spec :family "Noto Serif"))
+               )
+  )
+
+ )
+)

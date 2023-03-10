@@ -3,6 +3,7 @@
 {
   imports = [
     ../../editors/emacs/doom-emacs
+    ../../editors/vscode
     ../../shells/git
     ../../shells/zsh
     ../../shells/fish
@@ -10,6 +11,7 @@
     ../../lang/latex
     ../../lang/markdown
     ../../lang/python
+    ../../lang/cpp
 
   ];
 
